@@ -1,38 +1,155 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Body with full-page gradient background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to top right, #ff7e5f, #feb47b, #ff4d6d);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  flex-direction: column; /* Align navbar and login form vertically */
+}
+
+/* Navbar styling to ensure it takes full width */
+.navbar {
+  width: 100%; /* Ensure the navbar takes full width */
+  padding: 15px;
+  background-color: #333;
   color: white;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  position: relative; /* Position relative instead of fixed */
+  top: 0;
+  left: 0;
 }
 
-.App-link {
-  color: #61dafb;
+/* Adjusted space between navbar and login form */
+.container {
+  background: #fff;
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 80px; /* Adjusted to provide space without being too far */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Hover effect on container */
+.container:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+  animation: shadowPulse 1.5s infinite alternate;
+}
+
+@keyframes shadowPulse {
+  0% {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
   }
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ff6a00;
+  background: linear-gradient(to left, #ff6a00, #ff4d6d);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 20px;
+  animation: fadeInText 2s ease-in-out;
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Input fields with custom rounded corners and inner shadows */
+input {
+  width: 100%;
+  padding: 15px 15px;
+  margin: 15px 0;
+  border: 2px solid #f3f3f3;
+  border-radius: 50px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #ff6a00;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(255, 106, 0, 0.6);
+  outline: none;
+  animation: inputFocusAnim 0.4s ease-in-out;
+}
+
+@keyframes inputFocusAnim {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Login Button with hover animation */
+button {
+  width: 100%;
+  padding: 16px;
+  margin-top: 25px;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  background: linear-gradient(45deg, #ff6a00, #ff4d6d);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #ff4d6d, #ff6a00);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  background: linear-gradient(45deg, #ff4d6d, #ff6a00);
+  transform: translateY(0);
+}
+
+/* Footer link styling (e.g., "Forgot password" or "Sign up") */
+footer {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
+}
+
+footer a {
+  color: #ff6a00;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #ff4d6d;
 }
